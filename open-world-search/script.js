@@ -38,26 +38,31 @@ async function listCountries() {
         console.log('First country:', country)
         console.log('Country properties:', Object.keys(country));
 
-        // Create Country Card
-        const card = document.createElement('article');
-        card.classList.add('country-card');
-
         // Create Flag
         countries.forEach(country => {
+
+            // Create Country Card
+            const card = document.createElement('article');
+            card.classList.add('country-card');
+
+            // Create flag
             const flag = document.createElement('img');
             flag.src = country.flag.url_png;
             flag.alt = `Flag of ${country.names.common}`;
 
+            // Adding Country's Name
+            const countryName = document.createElement('h2');
+            countryName.textContent = country.names.common;
+
+            // Flag Append
+            card.append(flag);
+            card.append(countryName);
+
+            // Card Append
+            countryList.append(card);
+
         })
 
-        // Adding Country's Name
-        const countryName = document.createElement('h2');
-        countryName.textContent = country.names.common;
-
-        // Card Elements
-        card.append(flag);
-        card.append(countryName);
-        countryList.append(card);
 
     } catch (error) {
         console.error('Error Request', error);
