@@ -45,7 +45,7 @@ async function listCountries() {
             const card = document.createElement('article');
             card.classList.add('country-card');
 
-            // Create flag
+            // Create flag image
             const flag = document.createElement('img');
             flag.src = country.flag.url_png;
             flag.alt = `Flag of ${country.names.common}`;
@@ -54,9 +54,14 @@ async function listCountries() {
             const countryName = document.createElement('h2');
             countryName.textContent = country.names.common;
 
-            // Flag Append
+            // Adding Population
+            const population = document.createElement('p');
+            population.textContent = `Population: ${country.population.toLocaleString()}`;
+
+            // Flag and Name Append
             card.append(flag);
             card.append(countryName);
+            card.append(population);
 
             // Card Append
             countryList.append(card);
