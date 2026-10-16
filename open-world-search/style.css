@@ -80,3 +80,10 @@ main {
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
+
+/* Country Card */
+.country-card {
+    background-color: hsl(0, 100%, 100%);
+    border-radius: 5px;
+}
+

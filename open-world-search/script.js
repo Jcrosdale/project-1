@@ -22,9 +22,32 @@ async function listCountries() {
             console.error('Error details:', result.errors?.map(error => error.message))
             return
         }
-        const countries = result.data.objects
-        console.log('First', countries[0]);
-        
+
+        // Country Card Element
+        const countries = result.data.objects;
+        const country = countries[0];
+
+        // Display Details
+        console.log('First country:', country)
+        console.log('Country properties:', Object.keys(country));
+
+        // Create Country Card
+        const card = document.createElement('article');
+        card.classList.add('country-card');
+
+        // Create Flag
+        const flag = document.createElement('img');
+        flag.src = //img file
+        flag.alt = `Flag of ${country.names}`;
+
+        // Adding Country's Name
+        const countryName = document.createElement('h2');
+        countryName.textContent = country.names;
+
+        // Card Elements
+        card.append(flag);
+        card.append(countryName);
+        countryList.append(card);
 
     } catch (error) {
         console.error('Error Request', error);
