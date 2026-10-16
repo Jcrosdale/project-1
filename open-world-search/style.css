@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    background-color: hsl(0, 0%, 99%); /* grey */
+    margin: 0;
+}
+
+h1 {
+  font-weight: 700
+}
+
+/* Light Mode Background */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2rem;
+    background-color: hsl(0, 100%, 100%); /* white */
+}
+
+main {
+    padding: 30px 2rem;
+}
+
+
+/* Search bar */
+#site-search {
+    font-size: 14px;
+    background-color: hsl(0, 100%, 100%);
+    width: 100%;
+    max-width: 400px;
+    color: hsl(200, 15%, 8%); 
+    border: none;
+    border-radius: 5px;
+    padding: 16px 24px;
+}
+
+#filter-region {
+    font-size: 14px;
+    background-color: hsl(0, 100%, 100%);
+    color: hsl(200, 15%, 8%);
+    border: none;
+    border-radius: 5px;
+    padding: 16px 20px;
+    width: 200px; 
+}
+
+#filter-region option {
+    font-size: 14px;
+    color: hsl(200, 15%, 8%);
+    background-color: hsl(0, 100%, 100%);
+}
+
+@media (max-width: 375px) {
+    #search-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #site-search, #filter-region {
+        width: 100%;
+        max-width: none; /* override desktop width */
+    }
+}

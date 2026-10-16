@@ -7,8 +7,14 @@
     <title>Open World Search</title>
 
     <!-- Link CSS and JS-->
-    <link href="style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
     <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rouge+Script&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -24,11 +30,11 @@
     </header>
 
     <main>
-        <section>
+        <section id="search-section">
             <input type="search" id="site-search" placeholder="Search for a country..." />
 
             <select name="filter" id="filter-region">
-                <option value=""> Filter by Region </option>
+                <option value="" selected disabled> Filter by Region </option>
                 <option value="Africa">Africa</option>
                 <option value="America">America</option>
                 <option value="Asia">Asia</option>
@@ -43,7 +49,6 @@
 
     </main>
 
-</body>
 </body>
 
 </html>
