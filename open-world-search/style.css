@@ -25,6 +25,15 @@ main {
     padding: 30px 2rem;
 }
 
+#theme-switch {
+    background-color: hsl(0, 100%, 100%);
+    color: hsl(200, 15%, 8%);
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+}
 
 /* Search bar */
 #site-search {
@@ -64,4 +73,10 @@ main {
         width: 100%;
         max-width: none; /* override desktop width */
     }
+}
+
+#country-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
 }
