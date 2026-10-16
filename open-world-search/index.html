@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open World Search</title>
+
+    <!-- Link CSS and JS-->
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Where in the world?</h1>
+
+        <button id="theme-switch" type="button">
+            Dark Mode
+        </button>
+
+    </header>
+
+    <main>
+        <section>
+            <input type="search" id="site-search" placeholder="Search for a country..." />
+            <ion-icon name="search-outline"></ion-icon>
+
+            <select name="filter" id="filter-region">
+                <option value=""> Filter by Region </option>
+                <option value="Africa">Africa</option>
+                <option value="America">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </section>
+
+        <section id="country-list">
+
+        </section>
+
+    </main>
+
+</body>
+</body>
+
+</html>
