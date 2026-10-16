@@ -7,10 +7,10 @@ async function listCountries() {
 
     try {
         // API Key
-        const url = 'https://api.restcountries.com/countries/v5?q=canada';
+        const url = 'https://api.restcountries.com/countries/v5?limit=100&pretty=1';
 
-        const response = await fetch(url, 
-            { headers: { 'Authorization': 'Bearer rc_live_446e385638a94e05b148e514ffc3407e'} }
+        const response = await fetch(url,
+            { headers: { 'Authorization': 'Bearer rc_live_446e385638a94e05b148e514ffc3407e' } }
         );
 
         const result = await response.json();
@@ -27,6 +27,13 @@ async function listCountries() {
         const countries = result.data.objects;
         const country = countries[0];
 
+        console.log('Country object:', country)
+        console.log('Country Name:', country.names);
+        console.log('FLag:', country.flag);
+        console.log('Flag image URL:', country.flag.png);
+        console.log('Available:', Object.keys(country))
+
+
         // Display Details
         console.log('First country:', country)
         console.log('Country properties:', Object.keys(country));
@@ -36,13 +43,16 @@ async function listCountries() {
         card.classList.add('country-card');
 
         // Create Flag
-        const flag = document.createElement('img');
-        flag.src = //img file
-        flag.alt = `Flag of ${country.names}`;
+        countries.forEach(country => {
+            const flag = document.createElement('img');
+            flag.src = country.flag.url_png;
+            flag.alt = `Flag of ${country.names.common}`;
+
+        })
 
         // Adding Country's Name
         const countryName = document.createElement('h2');
-        countryName.textContent = country.names;
+        countryName.textContent = country.names.common;
 
         // Card Elements
         card.append(flag);
