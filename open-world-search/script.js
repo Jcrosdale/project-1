@@ -56,12 +56,23 @@ async function listCountries() {
 
             // Adding Population
             const population = document.createElement('p');
-            population.textContent = `Population: ${country.population.toLocaleString()}`;
+            population.textContent = `Population: ${country.population.toLocaleString()}`; //Better formatting
+
+            // Adding Region
+            const region = document.createElement('p');
+            region.textContent = `Region: ${country.region}`;
+
+            // Adding Capital
+            const capital = document.createElement('p');
+            capital.textContent = `Capital: ${country.capitals[0].name}`;
+            
 
             // Flag and Name Append
             card.append(flag);
             card.append(countryName);
             card.append(population);
+            card.append(region);
+            card.append(capital);
 
             // Card Append
             countryList.append(card);
@@ -70,7 +81,7 @@ async function listCountries() {
 
 
     } catch (error) {
-        console.error('Error Request', error);
+        console.error('Error Request', error); 
     }
 }
 
