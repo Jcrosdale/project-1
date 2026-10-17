@@ -1,3 +1,6 @@
+// Countries Array
+let countries = [];
+
 // HTML Elements
 const countryList = document.querySelector('#country-list');
 const inputSearch = document.querySelector('#site-search');
@@ -24,7 +27,7 @@ async function listCountries() {
         }
 
         // Country Card Element
-        const countries = result.data.objects;
+        countries = result.data.objects;
         const country = countries[0];
 
         console.log('Country object:', country)
@@ -91,5 +94,16 @@ async function listCountries() {
         console.error('Error Request', error);
     }
 }
+
+// Search Event Listener
+inputSearch.addEventListener('input', () => {
+    const searchText = inputSearch.value.toLowerCase(); // value of input
+
+    const filterCountries = countries.filter(country =>
+        country.names.common.toLowerCase().includes(searchText)
+    );
+
+    console.log(filterCountries);
+});
 
 listCountries();
