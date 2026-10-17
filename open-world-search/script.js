@@ -1,3 +1,5 @@
+import { KEY } from "./secret.js";
+
 // Countries Array
 let countries = [];
 
@@ -14,7 +16,7 @@ async function listCountries() {
         const url = 'https://api.restcountries.com/countries/v5?limit=100&pretty=1';
 
         const response = await fetch(url,
-            { headers: { 'Authorization': 'Bearer rc_live_446e385638a94e05b148e514ffc3407e' } }
+            { headers: { 'Authorization': `Bearer ${KEY}` } }
         );
 
         // Convert to object
