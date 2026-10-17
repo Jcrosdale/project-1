@@ -31,9 +31,18 @@
 
     <main>
         <section id="search-section">
-            <input type="search" id="site-search" placeholder="Search for a country..." />
+            <input 
+                type="search" 
+                id="site-search" 
+                placeholder="Search for a country..." 
+                aria-label="Search for a country"
+            >
 
-            <select name="filter" id="filter-region">
+            <select 
+                name="filter" 
+                id="filter-region" 
+                aria-label="Filter countries by region"
+            >
                 <option value="" selected disabled> Filter by Region </option>
                 <option value="Africa">Africa</option>
                 <option value="America">America</option>

@@ -4,12 +4,11 @@
 
 body {
     font-family: "Nunito Sans", sans-serif;
-    background-color: hsl(0, 0%, 99%); /* grey */
+    background-color: hsl(0, 0%, 99%);
+    color: hsl(200, 15%, 8%);
     margin: 0;
-}
-
-h1 {
-  font-weight: 700
+    min-width: 0;
+    line-height: 1.5;
 }
 
 /* Light Mode Background */
@@ -17,73 +16,148 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 2rem;
-    background-color: hsl(0, 100%, 100%); /* white */
+    gap: 1rem;
+    padding: 1.25rem 2rem;
+    background-color: hsl(0, 100%, 100%);
+    /* white */
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 700
+
 }
 
 main {
-    padding: 30px 2rem;
+    width: 100%;
+    max-width: 1600px;
+    margin-inline: auto;
+    padding: 1.5rem 2rem;
+}
+
+#search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem 1.5rem;
 }
 
 #theme-switch {
+    min-height: 44px;
     background-color: hsl(0, 100%, 100%);
     color: hsl(200, 15%, 8%);
     border: none;
     font-family: inherit;
     font-size: 14px;
     font-weight: 600;
-    padding: 8px 12px;
+    border: 1px solid transparent;
+    padding: 0.65rem 0.9rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
 }
-
+#site-search, #filter-region {
+    min-height: 48px;
+    border: 1px solid black;
+    background-color: hsl(0, 100%, 100%);
+    border-radius: 5px;
+    font: inherit;
+    font-size: 14px;
+    color: hsl(200, 15%, 8%);
+}
 /* Search bar */
 #site-search {
-    font-size: 14px;
-    background-color: hsl(0, 100%, 100%);
-    width: 100%;
-    max-width: 400px;
-    color: hsl(200, 15%, 8%); 
-    border: none;
-    border-radius: 5px;
-    padding: 16px 24px;
+    width: min(100%, 375px);
+    min-width: 0;
+    padding: 0.75rem 1rem;
 }
 
 #filter-region {
-    font-size: 14px;
-    background-color: hsl(0, 100%, 100%);
-    color: hsl(200, 15%, 8%);
-    border: none;
-    border-radius: 5px;
-    padding: 16px 20px;
-    width: 200px; 
+    padding: 0.75rem 1rem;
+    width: 200px;
+    flex-shrink: 0;
+    max-width: 100%;
 }
 
 #filter-region option {
-    font-size: 14px;
     color: hsl(200, 15%, 8%);
     background-color: hsl(0, 100%, 100%);
 }
 
-@media (max-width: 375px) {
-    #search-section {
-        flex-direction: column;
-        align-items: stretch;
-    }
+.country-card {
+    min-width: 0;
+    overflow: hidden;
+    background-color: hsl(0, 100%, 100%);
+    border-radius: 5px;
+}
 
-    #site-search, #filter-region {
-        width: 100%;
-        max-width: none; /* override desktop width */
-    }
+.country-card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+
+}
+
+.country-card h2, .country-card p {
+    margin: 0 1.5rem;
+    overflow-wrap: anywhere;
+}
+
+.country-card h2 {
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
 }
 
 #country-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    padding: 1.5rem
 }
 
-/* Country Card */
-.country-card {
-    background-color: hsl(0, 100%, 100%);
-    border-radius: 5px;
+@media (max-width: 1440px) {
+    #country-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
+@media (max-width: 375px) {
+    body {
+        min-width: 0;
+    }
+
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #search-section {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+    }
+
+    #site-search,
+    #filter-region {
+        width: 100%;
+        max-width: none;
+        /* override desktop width */
+    }
+
+    #country-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    /* Country Card */
+    .country-card img {
+        height: 160px;
+    }
+
+
+}

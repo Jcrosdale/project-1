@@ -101,5 +101,19 @@ inputSearch.addEventListener('input', () => {
     displayCountries(filterCountries);
 });
 
+// Filter Region Event Listener 
+filterRegion.addEventListener('change', () => {
+    // Value of region selected
+    const selectedRegion = filterRegion.value;
+
+    // Creates a new array for only countries that match
+    const filterCountries = countries.filter(country =>
+        country.region === selectedRegion
+    );
+
+    // Displays list of countries after filter
+    displayCountries(filterCountries);
+});
+
 // Country list displays
 listCountries();
