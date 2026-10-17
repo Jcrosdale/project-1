@@ -124,6 +124,12 @@ main {
     }
 }
 
+/* Tablet */
+@media (max-width: 1000px) {
+    #country-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 @media (max-width: 375px) {
     body {
         min-width: 0;
@@ -132,6 +138,8 @@ main {
     header {
         align-items: flex-start;
         flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 
     #search-section {
