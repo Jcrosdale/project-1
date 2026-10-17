@@ -161,3 +161,20 @@ main {
 
 
 }
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #181818;
+    color: white;
+}
+
+body.dark-mode header, body.dark-mode .country-card {
+    background-color: #181818;
+    color: white;
+}
+
+body.dark-mode #site-search, body.dark-mode #filter-region, body.dark-mode #theme-switch {
+    background-color: #181818;
+    color: white;
+    border-color: black;
+}

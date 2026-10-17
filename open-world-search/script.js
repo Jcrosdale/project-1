@@ -115,5 +115,16 @@ filterRegion.addEventListener('change', () => {
     displayCountries(filterCountries);
 });
 
+// Theme switch
+const themeSwitch = document.querySelector('#theme-switch');
+
+themeSwitch.addEventListener('click', () => {
+    const darkMode = document.body.classList.toggle('dark-mode');
+
+    themeSwitch.textContent = darkMode ? 'Light Mode' : 'Dark Mode';
+});
+
 // Country list displays
 listCountries();
+
+
