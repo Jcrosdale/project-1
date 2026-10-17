@@ -62,19 +62,22 @@ async function listCountries() {
             const region = document.createElement('p');
             region.textContent = `Region: ${country.region}`;
 
-            // Adding Capital
-            const capital = document.createElement('p');
-            capital.textContent = `Capital: ${country.capitals[0].name}`;
-            
-
             // Flag and Name Append
             card.append(flag);
             card.append(countryName);
+
             card.append(population);
             card.append(region);
-            card.append(capital);
 
-            // Card Append
+            // Country displays even without capital
+            if (country.capitals && country.capitals.length > 0) {
+                // Adding Capital
+                const capital = document.createElement('p');
+                capital.textContent = `Capital: ${country.capitals[0].name}`;
+                card.append(capital);
+            }
+
+            // Card Append Display
             countryList.append(card);
 
         })
