@@ -49,25 +49,29 @@ async function listCountries() {
             const flag = document.createElement('img');
             flag.src = country.flag.url_png;
             flag.alt = `Flag of ${country.names.common}`;
+            card.append(flag);
 
             // Adding Country's Name
             const countryName = document.createElement('h2');
             countryName.textContent = country.names.common;
+            card.append(countryName);
 
             // Adding Population
             const population = document.createElement('p');
             population.textContent = `Population: ${country.population.toLocaleString()}`; //Better formatting
+            card.append(population);
 
             // Adding Region
             const region = document.createElement('p');
             region.textContent = `Region: ${country.region}`;
-
-            // Flag and Name Append
-            card.append(flag);
-            card.append(countryName);
-
-            card.append(population);
             card.append(region);
+
+            // Adding sub region
+            if (country.subregion && country.subregion.length > 0) {
+                const subregion = document.createElement('p');
+                subregion.textContent = `Sub Region: ${country.subregion}`;
+                card.append(subregion);
+            }
 
             // Country displays even without capital
             if (country.capitals && country.capitals.length > 0) {
@@ -84,7 +88,7 @@ async function listCountries() {
 
 
     } catch (error) {
-        console.error('Error Request', error); 
+        console.error('Error Request', error);
     }
 }
 
